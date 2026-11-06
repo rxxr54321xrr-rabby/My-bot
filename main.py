@@ -417,4 +417,9 @@ def main():
     app.run_polling(poll_interval=1.0)
 
 if __name__ == "__main__":
-    main()
+    while True:
+        try:
+            main()
+        except Exception as e:
+            print(f"Bot crashed, restarting... {e}")
+            time.sleep(5)
